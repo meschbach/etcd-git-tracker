@@ -2,5 +2,7 @@
 
 if [ -z ${ETCD_CTL+x} ] ; then ETCD_CTL=etcdctl ; fi
 if [ -z ${ETCD_BASE+x} ] ; then ETCD_BASE=/git-tracker ; fi
-if [ -z ${GIT_REPO} ] ; then GIT_REPO=${PWD} ; fi
+if [ -z ${GIT_DIR} ] ; then GIT_DIR=${PWD} ; fi
 
+rev=`git rev-parse --short HEAD`
+echo $rev
