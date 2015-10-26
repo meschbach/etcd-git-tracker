@@ -1,0 +1,9 @@
+[Unit]
+Description=etcd-git-tracker
+
+[Service]
+ExecStart=/opt/coreos/etcd-2.2.0/etcdctl exec-watch /git-tracker2 -- /tmp/etcd-git-tracker/etcd-git-pull /tmp/etcd-git-tracker /tmp/etcd-updated
+User=nobody
+
+[Install]
+WantedBy=multi-user.target
