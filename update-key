@@ -13,4 +13,5 @@ rev=`git rev-parse --short HEAD`
 if [ -z ${ETCD_CTL+x} ] ; then ETCD_CTL=etcdctl ; fi
 if [ -z ${ETCD_BASE+x} ] ; then ETCD_BASE=/git-tracker ; fi
 
+echo -n "etcd:${ETCD_BASE} -> "
 ${ETCD_CTL} set ${ETCD_BASE} ${rev}
