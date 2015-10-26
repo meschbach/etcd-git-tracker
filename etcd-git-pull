@@ -3,5 +3,9 @@
 export GIT_DIR=$1
 export GIT_WORK_TREE=$2
 
-git fetch
-git checkout $ETCD_WATCH_VALUE
+rev=$ETCD_WATCH_VALUE
+
+echo "... -> ${rev}"
+git fetch -q
+git checkout -qf ${rev}
+echo "...done"
